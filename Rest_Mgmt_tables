@@ -1,0 +1,133 @@
+USE Restaurant_Mgmt
+GO
+
+--DROP TABLE tbl_Employee
+
+CREATE TABLE tbl_Employee(
+emp_id varchar(4) not null,
+branch_id varchar(5) not null,
+emp_name varchar(20) not null,
+emp_address varchar(100) not null,
+emp_phone varchar(20) not null,
+emp_PPS varchar(15) not null,
+emp_email varchar(20) not null,
+emp_position varchar(20) not null,
+emp_monthly_salary int,
+emp_permission_level varchar(1) not null,
+CONSTRAINT emp_pk PRIMARY KEY(emp_id),
+CONSTRAINT emp_fk FOREIGN KEY(branch_id)
+REFERENCES tbl_Branch(branch_id)
+)
+GO
+
+--DROP TABLE tbl_Branch
+
+CREATE TABLE tbl_Branch(
+branch_id varchar(5) not null,
+branch_name varchar(20) not null,
+branch_location varchar(50) not null,
+branch_phone varchar(10),
+CONSTRAINT branch_pk PRIMARY KEY(branch_id)
+)
+GO
+
+--DROP TABLE tbl_Customer
+
+CREATE TABLE tbl_Customer(
+customer_id varchar(10) not null,
+customer_name varchar(30) not null,
+customer_address varchar (30) not null,
+customer_city varchar(20) not null,
+customer_phone varchar(10),
+customer_email varchar(30),
+customer_type varchar (20),
+CONSTRAINT customer_pk PRIMARY KEY(customer_id),
+)
+GO
+
+--DROP TABLE tbl_Order
+
+CREATE TABLE tbl_Order(
+order_id varchar(10) not null,
+branch_id varchar(5) not null,
+customer_id varchar(10) not null,
+menu_item_id varchar(10) not null,
+menu_item_quantity int,
+order_date date not null,
+order_time time not null,
+CONSTRAINT order_pk PRIMARY KEY (order_id),
+CONSTRAINT order_fk1 FOREIGN KEY (customer_id)
+REFERENCES tbl_Customer(customer_id),
+CONSTRAINT order_fk2 FOREIGN KEY(branch_id)
+REFERENCES tbl_Branch(branch_id),
+CONSTRAINT order_fk3 FOREIGN KEY(menu_item_id)
+REFERENCES tbl_MenuItem(menu_item_id),
+)
+GO
+
+--DROP TABLE tbl_Transaction
+
+CREATE TABLE tbl_Transaction(
+transaction_id varchar(10) not null,
+order_id varchar(10) not null,
+order_item varchar(30),
+order_item_quantity int,
+order_discount varchar(3),
+total_bill float
+CONSTRAINT transaction_pk PRIMARY KEY(transaction_id),
+CONSTRAINT transation_fk FOREIGN KEY(order_id)
+REFERENCES tbl_Order(order_id)
+)
+GO
+
+--DROP TABLE tbl_Payment
+
+CREATE TABLE tbl_Payment(
+payment_id varchar(10) not null,
+transaction_id varchar(10) not null,
+payment_method varchar(20) not null,
+payment_date date not null,
+payment_time time not null,
+CONSTRAINT payment_pk PRIMARY KEY (payment_id),
+CONSTRAINT payment_fk FOREIGN KEY (transaction_id)
+REFERENCES tbl_Transaction(transaction_id),
+)
+GO
+
+--DROP TABLE tbl_MenuItem
+
+CREATE TABLE tbl_MenuItem(
+menu_item_id varchar(10) not null,
+menu_item_price float not null,
+CONSTRAINT menu_item_pk PRIMARY KEY (menu_item_id)
+)
+GO
+
+--DROP TABLE tbl_Product_Ingredient
+
+CREATE TABLE tbl_Product_Ingredient(
+prod_id varchar(10) not null,
+supplier_id varchar(10) not null,
+menu_item_id varchar(10) not null,
+CONSTRAINT product_pk PRIMARY KEY (prod_id),
+CONSTRAINT product_fk1 FOREIGN KEY (supplier_id)
+REFERENCES tbl_Supplier(supplier_id),
+CONSTRAINT product_fk2 FOREIGN KEY(menu_item_id)
+REFERENCES tbl_MenuItem(menu_item_id),
+)
+GO
+
+--DROP TABLE tbl_Supplier
+
+CREATE TABLE tbl_Supplier(
+supplier_id varchar(10) not null,
+supplier_type varchar(10) not null,
+supplier_name varchar(30) not null,
+supplier_address varchar(30) not null,
+supplier_city varchar(20) not null,
+sales_rep varchar(20),
+contact_number varchar(15),
+list_products xml
+CONSTRAINT supplier_pk PRIMARY KEY (supplier_id)
+)
+GO
