@@ -223,3 +223,12 @@ DELETE FROM tbl_Employee WHERE emp_id= '1111'
 SELECT * FROM tbl_Employee
 SELECT * FROM tbl_Record
 
+BEGIN TRANSACTION
+INSERT  INTO dbo.tbl_Employee(emp_id, branch_id, emp_name, emp_address, emp_phone, emp_PPS, emp_email, emp_position, emp_monthly_salary, emp_permission_level)
+        SELECT  2121, '12345', 'Mark Robins', 'North Circular Road, D7', '0877655466', 'MR2233242', 'mark@gmail.com', 'Cashier', 1550, '1'
+        UNION ALL
+        SELECT  '3333', '12345', 'Julia Rodriguez', 'South Circular Road, D8', '0897655411', 'JR2233240', 'julia@gmail.com', 'Cashier', 1550, '1'
+SELECT  *
+FROM    dbo.tbl_Employee
+
+ROLLBACK TRANSACTION
