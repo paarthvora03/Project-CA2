@@ -173,6 +173,20 @@ DECLARE @EmpName varchar (50)
 EXEC GetEmployeeByID '2222', @EmpName Out 
 
 
+BEGIN TRANSACTION
+SELECT  *
+FROM    dbo.tbl_Employee
+WHERE   emp_id = 2222
+ 
+UPDATE  tbl_Employee
+SET     emp_phone = '0831112223'
+WHERE   emp_id = 2222
+
+SELECT  *
+FROM    dbo.tbl_Employee
+WHERE   emp_id = 2222
+
+ROLLBACK TRANSACTION
 
 
 
