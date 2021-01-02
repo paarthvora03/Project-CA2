@@ -171,8 +171,7 @@ END
 
 DECLARE @EmpName varchar (50)
 EXEC GetEmployeeByID '2222', @EmpName Out 
-SELECT @EmpName AS emp_name
-print @EmpName
+
 
 
 
