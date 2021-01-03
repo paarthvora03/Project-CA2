@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<supplier_items xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <record>
+       <Code></Code>
+       <Item></Item>
+       <Specification></Specification>
+       <Price></Price>
+    </record>
+    <record>
+	   <Code>VG966Z</Code>
+       <Item>Vegan Pulled oats Veggie burger FZN</Item>
+       <Specification>1.6kg</Specification>
+       <Price>170.00</Price>
+    </record>
+	<record>
+	   <Code>VG739Z</Code>
+       <Item>Beer battered Onion Ring</Item>
+       <Specification>6kg per case</Specification>
+       <Price>58.50</Price>
+    </record>
+	<record>
+	   <Code>VX739Z</Code>
+       <Item>Crisps</Item>
+       <Specification>48 per case</Specification>
+       <Price>10.20</Price>
+    </record>
+	<record>
+	   <Code>VP223Z</Code>
+       <Item>Fries skin on</Item>
+       <Specification>9x94x2.5kg per case</Specification>
+       <Price>25.40</Price>
+    </record>
+</supplier_items>
