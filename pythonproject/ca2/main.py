@@ -16,3 +16,10 @@ def dashboard():
 
 if __name__ == "__main__":
   app.run()
+
+@app.route('/customer')
+def customer():
+    return render_template("customer.html")
+
+if __name__ == "__main__":
+  app.run()
