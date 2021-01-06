@@ -40,3 +40,11 @@ def transaction():
 
 if __name__ == "__main__":
   app.run()
+
+#product
+@app.route('/product')
+def product():
+    return render_template("product.html")
+
+if __name__ == "__main__":
+  app.run()
