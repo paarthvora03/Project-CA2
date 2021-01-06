@@ -17,9 +17,16 @@ def dashboard():
 if __name__ == "__main__":
   app.run()
 
-@app.route('/customer')
-def customer():
-    return render_template("customer.html")
+@app.route('/customers')
+def customers():
+    return render_template("customers.html")
+
+if __name__ == "__main__":
+  app.run()
+
+@app.route('/payment')
+def payment():
+    return render_template("payment.html")
 
 if __name__ == "__main__":
   app.run()
