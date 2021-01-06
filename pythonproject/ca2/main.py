@@ -56,3 +56,11 @@ def order():
 
 if __name__ == "__main__":
   app.run()
+
+#supplier
+@app.route('/supplier')
+def supplier():
+    return render_template("supplier.html")
+
+if __name__ == "__main__":
+  app.run()
