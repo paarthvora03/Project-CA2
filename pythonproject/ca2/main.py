@@ -9,7 +9,7 @@ def branch():
 if __name__ == "__main__":
   app.run()
 
-
+#dashboard
 @app.route('/dashboard')
 def dashboard():
     return render_template("dashboard.html")
@@ -17,6 +17,7 @@ def dashboard():
 if __name__ == "__main__":
   app.run()
 
+#customers
 @app.route('/customers')
 def customers():
     return render_template("customers.html")
@@ -24,9 +25,18 @@ def customers():
 if __name__ == "__main__":
   app.run()
 
+#payment
 @app.route('/payment')
 def payment():
     return render_template("payment.html")
+
+if __name__ == "__main__":
+  app.run()
+
+#transaction
+@app.route('/transaction')
+def transaction():
+    return render_template("transaction.html")
 
 if __name__ == "__main__":
   app.run()
