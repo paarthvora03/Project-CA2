@@ -48,3 +48,36 @@ def product():
 
 if __name__ == "__main__":
   app.run()
+
+#employee
+@app.route('/employee')
+def employee():
+    return render_template("employee.html")
+
+if __name__ == "__main__":
+  app.run()
+
+#menu
+@app.route('/menu')
+def menu():
+    return render_template("menu.html")
+
+if __name__ == "__main__":
+  app.run()
+
+
+#supplier
+@app.route('/supplier')
+def supplier():
+    return render_template("supplier.html")
+
+if __name__ == "__main__":
+  app.run()
+
+#order
+@app.route('/order')
+def order():
+    return render_template("order.html")
+
+if __name__ == "__main__":
+  app.run()
