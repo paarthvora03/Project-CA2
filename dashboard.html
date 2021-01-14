@@ -16,52 +16,7 @@
   </head>
   <body>
     <!-- Header starts -->
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="javascript:;">Mexican Restaurant</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarText">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="./dashboard.html">Dashboard</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./employee.html">Employee</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./customers.html">Customer</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./branch.html">Branch</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./supplier.html">Supplier</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Menu
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <li><a class="dropdown-item" href="./menu.html">Menu</a></li>
-                  <li><a class="dropdown-item" href="./product.html">Product</a></li>
-                </ul>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownTransactionLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Transaction
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdownTransactionLink">
-                  <li><a class="dropdown-item" href="./order.html">Order</a></li>
-                  <li><a class="dropdown-item" href="./payment.html">Payment</a></li>
-                  <li><a class="dropdown-item" href="./transaction.html">Transaction</a></li>
-                </ul>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
+      {% include 'header/header.html' %}
     <!-- Header ends -->
 
     <!-- Main Container starts -->
